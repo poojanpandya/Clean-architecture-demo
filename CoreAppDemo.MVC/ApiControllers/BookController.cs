@@ -64,5 +64,30 @@ namespace CoreAppDemo.MVC.ApiControllers
             }
             return BadRequest();
         }
+
+        [HttpPost("api/AddBookcategory")]
+        public IActionResult AddBookcategory(BookCategory b)
+        {
+            var response = bookService.AddCategory(b);
+            return Ok(response);
+        }
+
+        [HttpGet("api/GetBookcategory")]
+        public IActionResult GetBookcategory()
+        {
+            var response = bookService.GetBookCategory();
+            return Ok(response);
+        }
+
+        [HttpGet("api/GetBookcategoryById")]
+        public ActionResult GetBookcategoryByID(int categoryId)
+        {
+            if (categoryId > 0)
+            {
+                return Ok(bookService.GetBookCategorybyId(categoryId));
+            }
+            else
+                return BadRequest();
+        }
     }
 }

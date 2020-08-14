@@ -11,10 +11,12 @@ namespace CoreApp.Application.Services
     public class BookService : IBookService
     {
         public IBookRepository _bookRepository;
+        public IBookCategoryRepository _bookcategoryRepository;
         public ApiResponseModel response = new ApiResponseModel();
-        public BookService(IBookRepository bookRepository)
+        public BookService(IBookRepository bookRepository,IBookCategoryRepository bookCategoryRepository)
         {
             _bookRepository = bookRepository;
+            _bookcategoryRepository = bookCategoryRepository;
         }
 
         public Book GetByID(int ID)
@@ -70,5 +72,28 @@ namespace CoreApp.Application.Services
         {
             return _bookRepository.GetByName(name);
         }
+
+        public ApiResponseModel AddCategory(BookCategory b)
+        {
+            _bookcategoryRepository.EnInsert(b);
+         
+            response.Status = true;
+            response.Message = "Added SuccessFully!";
+            return response;
+        }
+
+        public IEnumerable<BookCategory> GetBookCategory()
+        {
+            return _bookcategoryRepository.EnGetAll();
+        }
+
+        public BookCategory GetBookCategorybyId(object categoryId)
+        {
+            return _bookcategoryRepository.EnGetById(categoryId);
+        }
+
+
+
+
     }
 }

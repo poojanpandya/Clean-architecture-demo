@@ -4,6 +4,7 @@ using CoreApp.Infra.Data.Context;
 using CoreApp.Infra.Data.Dapper;
 using CoreApp.Infra.Data.Dapper.DapperHelpers;
 using CoreApp.Infra.Data.Interfaces;
+using CoreApp.Infra.Data.RepositoryAccess;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,9 @@ namespace CoreApp.Infra.Data.Repositories
     public class BookRepository : RepositoryAccess<Book>, IBookRepository
     {
         IDapperTools dapperTools;
-        UnitOfWork work;
-        public LibraryDbContext _context;
-        public BookRepository(LibraryDbContext context)
+
+        public BookRepository()
         {
-            _context = context;
             dapperTools = new DapperTools(Constants.LibraryConnection);
         }
 

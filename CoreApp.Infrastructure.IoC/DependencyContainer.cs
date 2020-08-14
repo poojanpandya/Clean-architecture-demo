@@ -20,6 +20,8 @@ namespace CoreApp.Infrastructure.IoC
             services.AddScoped<IAuthService, AuthService>();
 
             services.AddScoped<IAuthRepository, AuthRepository>();
+
+            services.AddScoped<IBookCategoryRepository,BookCategoryRepository>();
         }
     }
 }

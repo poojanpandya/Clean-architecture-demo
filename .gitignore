@@ -4,3 +4,14 @@
 
 /.vs/slnx.sqlite
 /CoreApp.Infra.Data/Migrations
+/CoreAppDemo.MVC/obj
+/CoreApp.Infrastructure.IoC/obj
+/CoreApp.Infra.Data/obj
+/CoreApp.Domain/obj
+/CoreApp.Application/obj
+/.vs
+/CoreApp.Application/bin/Debug/netcoreapp3.1
+/CoreApp.Domain/bin/Debug/netcoreapp3.1
+/CoreApp.Infra.Data/bin/Debug/netcoreapp3.1
+/CoreApp.Infrastructure.IoC/bin/Debug/netcoreapp3.1
+/CoreAppDemo.MVC/bin/Debug/netcoreapp3.1

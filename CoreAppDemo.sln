@@ -13,15 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreAppDemo.Infrastructure.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoreAppDemo.Infrastructure.UI.MVC", "CoreAppDemo.Infrastructure.UI.MVC", "{6A2DC281-B619-411B-B5D6-971639B65A63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreAppDemo.MVC", "CoreAppDemo.MVC\CoreAppDemo.MVC.csproj", "{2B0654FA-1D26-4549-B9ED-490679BCAC51}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreAppDemo.MVC", "CoreAppDemo.MVC\CoreAppDemo.MVC.csproj", "{2B0654FA-1D26-4549-B9ED-490679BCAC51}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp.Domain", "CoreApp.Domain\CoreApp.Domain.csproj", "{D3A3023C-2D1C-472F-A7EA-26CB4A20A6A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApp.Domain", "CoreApp.Domain\CoreApp.Domain.csproj", "{D3A3023C-2D1C-472F-A7EA-26CB4A20A6A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp.Infra.Data", "CoreApp.Infra.Data\CoreApp.Infra.Data.csproj", "{611AF27D-9386-4391-B62D-E7A1E4283E85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApp.Infra.Data", "CoreApp.Infra.Data\CoreApp.Infra.Data.csproj", "{611AF27D-9386-4391-B62D-E7A1E4283E85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp.Application", "CoreApp.Application\CoreApp.Application.csproj", "{68B40E18-6A6E-4712-A31F-512168B5980F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApp.Application", "CoreApp.Application\CoreApp.Application.csproj", "{68B40E18-6A6E-4712-A31F-512168B5980F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp.Infrastructure.IoC", "CoreApp.Infrastructure.IoC\CoreApp.Infrastructure.IoC.csproj", "{BE4899A4-5BDF-47E4-8260-980E0464C195}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreApp.Infrastructure.IoC", "CoreApp.Infrastructure.IoC\CoreApp.Infrastructure.IoC.csproj", "{BE4899A4-5BDF-47E4-8260-980E0464C195}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

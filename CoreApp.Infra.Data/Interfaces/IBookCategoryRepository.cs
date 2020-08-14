@@ -7,9 +7,8 @@ using System.Text;
 
 namespace CoreApp.Infra.Data.Interfaces
 {
-    public interface IBookRepository : IRepositoryAccess<Book>
+    public interface IBookCategoryRepository : IRepositoryAccess<BookCategory>
     {
-        Book GetByName(string name);
-        bool UpdateBooks(Book b);
+
     }
 }
