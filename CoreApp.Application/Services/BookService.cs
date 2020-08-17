@@ -21,77 +21,174 @@ namespace CoreApp.Application.Services
 
         public Book GetByID(int ID)
         {
-            return _bookRepository.Get(ID);
+            try
+            {
+                return _bookRepository.Get(ID);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public ApiResponseModel Add(Book b)
         {
-            long res =  _bookRepository.Insert(b);
-            if (res < 0)
+            try
             {
-                response.Status = false;
-                response.Message = "Something Went Wrong!";
+                long res = _bookRepository.Insert(b);
+                if (res < 0)
+                {
+                    response.Status = false;
+                    response.Message = "Something Went Wrong!";
+                    return response;
+                }
+                response.Status = true;
+                response.Message = "Added SuccessFully!";
                 return response;
             }
-            response.Status = true;
-            response.Message = "Added SuccessFully!";
-            return response;
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                return response;
+            }
         }
         public ApiResponseModel Update(Book b)
         {
-            var res = _bookRepository.UpdateBooks(b);
-            if (res == false)
+            try
             {
-                response.Status = false;
-                response.Message = "Something Went Wrong!";
+                var res = _bookRepository.UpdateBooks(b);
+                if (res == false)
+                {
+                    response.Status = false;
+                    response.Message = "Something Went Wrong!";
+                    return response;
+                }
+                response.Status = true;
+                response.Message = "Updated SuccessFully!";
                 return response;
             }
-            response.Status = true;
-            response.Message = "Updated SuccessFully!";
-            return response;
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                return response;
+            }
         }
         public ApiResponseModel Delete(Book b)
         {
-            var res = _bookRepository.Delete(b);
-            if (res == false)
+            try
             {
-                response.Status = false;
-                response.Message = "Something Went Wrong!";
+                var res = _bookRepository.Delete(b);
+                if (res == false)
+                {
+                    response.Status = false;
+                    response.Message = "Something Went Wrong!";
+                    return response;
+                }
+                response.Status = true;
+                response.Message = "Deleted SuccessFully!";
                 return response;
             }
-            response.Status = true;
-            response.Message = "Deleted SuccessFully!";
-            return response;
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                return response;
+            }
         }
 
         public IEnumerable<Book> GetBooks()
         {
-            return _bookRepository.GetAll();
+            try
+            {
+                return _bookRepository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
         public Book GetByName(string name)
         {
-            return _bookRepository.GetByName(name);
+            try
+            {
+                return _bookRepository.GetByName(name);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public ApiResponseModel AddCategory(BookCategory b)
         {
-            _bookcategoryRepository.EnInsert(b);
-         
-            response.Status = true;
-            response.Message = "Added SuccessFully!";
-            return response;
+            try
+            {
+                _bookcategoryRepository.EnInsert(b);
+                response.Status = true;
+                response.Message = "Added SuccessFully!";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                return response;
+            }
         }
 
         public IEnumerable<BookCategory> GetBookCategory()
         {
-            return _bookcategoryRepository.EnGetAll();
+            try
+            {
+                return _bookcategoryRepository.EnGetAll();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public BookCategory GetBookCategorybyId(object categoryId)
         {
-            return _bookcategoryRepository.EnGetById(categoryId);
+            try
+            {
+                return _bookcategoryRepository.EnGetById(categoryId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
+        public ApiResponseModel UpdateCategory(BookCategory b)
+        {
+            try
+            {
+                _bookcategoryRepository.EnUpdate(b);
+                response.Status = true;
+                response.Message = "Updated SuccessFully!";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                return response;
+            }
+        }
+
+        public ApiResponseModel DeleteCategory(int Id)
+        {
+            try
+            {
+                _bookcategoryRepository.EnDelete(Id);
+                response.Status = true;
+                response.Message = "Deleted SuccessFully!";
+                return response;
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                return response;
+            }
+        }
 
 
 

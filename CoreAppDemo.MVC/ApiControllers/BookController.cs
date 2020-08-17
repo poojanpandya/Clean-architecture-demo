@@ -25,6 +25,7 @@ namespace CoreAppDemo.MVC.ApiControllers
             this.mapper = mapper;
         }
 
+        // Used Dapper
         [Route("api/getBooks")]
         public IActionResult getBooks()
         {
@@ -65,6 +66,7 @@ namespace CoreAppDemo.MVC.ApiControllers
             return BadRequest();
         }
 
+        // Used EntityFramework
         [HttpPost("api/AddBookcategory")]
         public IActionResult AddBookcategory(BookCategory b)
         {
@@ -88,6 +90,29 @@ namespace CoreAppDemo.MVC.ApiControllers
             }
             else
                 return BadRequest();
+        }
+
+        [HttpPut("api/UpdateBookcategory")]
+        public ActionResult UpdateBookcategory(BookCategory b)
+        {
+            if (b.Id > 0)
+            {
+                var modifiedBook = bookService.UpdateCategory(b);
+                return Ok(modifiedBook);
+            }
+            else
+                return BadRequest();
+        }
+
+        [HttpDelete("DeleteBookCategory")]
+        public IActionResult DeleteBookCategory(int Id)
+        {
+            if (Id > 0)
+            {
+                var response = bookService.DeleteCategory(Id);
+                return Ok(response);
+            }
+            return BadRequest();
         }
     }
 }

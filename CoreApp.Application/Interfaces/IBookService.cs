@@ -17,5 +17,7 @@ namespace CoreApp.Application.Interfaces
         ApiResponseModel AddCategory(BookCategory b);
         IEnumerable<BookCategory> GetBookCategory();
         BookCategory GetBookCategorybyId(object categoryId);
+        ApiResponseModel UpdateCategory(BookCategory b);
+        ApiResponseModel DeleteCategory(int Id);
     }
 }
